@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .fadeIn {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="relative h-screen bg-cover bg-center" style="background-image: url('https://i.pinimg.com/736x/97/2d/3f/972d3f0d7409f045ab15223e8e38f78f.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full">
+            <div class="container mx-auto flex justify-between items-center mb-10 absolute top-0 left-0 right-0 p-4 animate-fadeInDown">
+                <div class="flex items-center space-x-4">
+                    <span class="text-3xl font-bold text-white padding-left-0">Easy Immobilier</span>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6 text-white">
+                        <li><a href="index.html" class="hover:text-yellow-400">Accueil</a></li>
+                        <li><a href="demachueur.html" class="hover:text-yellow-400">Notation Démarcheurs</a></li>
+                        <li><a href="verifica.html" class="hover:text-yellow-400">Vérification</a></li>
+                        <li><a href="suivi.html" class="hover:text-yellow-400">Suivi</a></li>
+                        <li><a href="signatu.html" class="hover:text-yellow-400">Signature Électronique</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="text-center mt-8 animate-fadeInUp">
+                <h1 class="text-5xl font-bold text-white mb-4">Simplifions l'immobilier à Abidjan</h1>
+                <p class="text-xl text-gray-300 mb-6">Trouvez, achetez et des biens immobiliers en toute simplicité.</p>
+                <a href="#bien" class="bg-yellow-500 text-white py-2 px-6 rounded-full hover:bg-yellow-600 transition">Commencez votre recherche</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-gradient-to-r from-white to-azure min-h-screen flex flex-col items-center justify-center space-y-10 ">
+        <!-- Formulaire d'enregistrement -->
+        <div class="max-w-xl w-full p-8 bg-white rounded-2xl shadow-2xl space-y-8 fadeIn">
+            <h1 class="text-4xl font-extrabold text-center text-gray-800">Enregistrement de Bien</h1>
+
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label for="nom" class="block text-sm font-medium text-gray-700">Nom du propriétaire</label>
+                    <input type="text" id="nom" name="nom" class="p-2 mt-1 block w-full border border-gray-300 rounded-md" required>
+                </div>
+                
+                <div>
+                    <label for="adresse" class="block text-sm font-medium text-gray-700">Adresse du bien</label>
+                    <input type="text" id="adresse" name="adresse" class="p-2 mt-1 block w-full border border-gray-300 rounded-md" required>
+                </div>
+
+                <div>
+                    <label for="type" class="block text-sm font-medium text-gray-700">Type de bien</label>
+                    <select id="type" name="type" class="p-2 mt-1 block w-full border border-gray-300 rounded-md">
+                        <option>Maison</option>
+                        <option>Appartement</option>
+                        <option>Terrain</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="document" class="block text-sm font-medium text-gray-700">Document de propriété</label>
+                    <input type="file" id="document" name="document" class="mt-1 block w-full text-sm text-gray-600" required>
+                </div>
+
+                <div class="flex justify-center">
+                    <a href="">
+                        <button type="submit" class="mt-6 py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                            Soumettre
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Section affichage des biens enregistrés -->
+        <div class="max-w-5xl w-full p-6 bg-white rounded-2xl shadow-2xl space-y-6 fadeIn">
+            <h2 class="text-3xl font-bold text-center text-gray-800">Biens Enregistrés</h2>
+            <div id="biens" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+        </div>
+
+        <script>
+            const biens = [
+                { nom: "villa Cocody", adresse: "Cocody, Abidjan", type: "Maison", image: "https://i.pinimg.com/736x/77/9a/bb/779abb8dcfb090e5d3bc8b9ee01fe6bc.jpg" },
+                { nom: "Appartement Riviera", adresse: "Riviera, Abidjan", type: "Appartement", image: "https://i.pinimg.com/736x/6b/99/c8/6b99c82f61f91b2fd70159c04c208afb.jpg" },
+                { nom: "Terrain Marcory", adresse: "Marcory, Abidjan", type: "Terrain", image: "https://i.pinimg.com/736x/01/99/5a/01995a44e8d71e0adb81914396a96633.jpg" },
+                { nom: "Villa Bingerville",adresse:"Bingerville,abidjan",type:"terrain",image:"https://i.pinimg.com/736x/71/34/18/713418767ccb34168a7407e381984dd9.jpg"}
+            ];
+
+            const biensContainer = document.getElementById('biens');
+
+            biens.forEach((bien, index) => {
+                const bienDiv = document.createElement('div');
+                bienDiv.className = 'p-4 bg-gray-100 rounded-lg shadow hover:shadow-lg transition duration-300 transform hover:scale-105';
+                bienDiv.innerHTML = `
+                    <img src="${bien.image}" alt="Image de ${bien.nom}" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">${bien.nom}</h3>
+                    <p class="text-gray-600">Adresse : ${bien.adresse}</p>
+                    <p class="text-gray-600">Type : ${bien.type}</p>
+                `;
+                setTimeout(() => {
+                    biensContainer.appendChild(bienDiv);
+                }, index * 200);
+            });
+        </script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Contact Section -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Contactez-Nous</h3>
+                    <p class="mb-4">Riviera 2</p>
+                    <p class="mb-4">Email: easy@immobilier.fr</p>
+                    <p>+255 0769565158</p>
+                </div>
+
+                <!-- Useful Links Section -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Liens Utiles</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-yellow-600 transition duration-300">Acheter</a></li>
+                        <li><a href="#" class="hover:text-yellow-600 transition duration-300">Vendre</a></li>
+                        <li><a href="#" class="hover:text-yellow-600 transition duration-300">Louer</a></li>
+                        <li><a href="#" class="hover:text-yellow-600 transition duration-300">Nos Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Section -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Suivez-Nous</h3>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-3xl hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-3xl hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-3xl hover:text-orange-500 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-3xl hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="text-center mt-8">
+            <p class="text-sm">&copy; 2025 Easy Immobilier. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

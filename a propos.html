@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <title>À propos de nous - Easy Immobilier</title>
+    <style>
+        /* Animation pour l'apparition des éléments */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Animation pour les icônes sociales */
+        .social-icons a {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Header Section -->
+ <!-- En-tête -->
+ <header class="bg-gray-800 text-white py-6 shadow-md">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+        <h1 class="text-3xl font-semibold">Easy Immobilier</h1>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-yellow-400">Accueil</a></li>
+                <li><a href="a propos.html" class="hover:text-yellow-400">A propos</a></li>
+                <li><a href="enregi.html" class="hover:text-yellow-400">Enregistrement</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="text-center">
+        <h1 class="text-3xl font-semibold">À propos de nous</h1>
+        <p class="mt-2 text-lg">Découvrez qui nous sommes et notre mission</p>
+    </div>
+</header>
+
+<!-- Main Content -->
+<section class="max-w-7xl mx-auto py-12 px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Section 1: Notre mission -->
+        <div class="space-y-6 fade-in">
+            <h2 class="text-3xl font-bold text-gray-800">Notre mission</h2>
+            <p class="text-lg text-gray-600">
+                Chez Easy Immobilier, notre mission est de simplifier l'acquisition, la vente et la location de biens immobiliers à Abidjan.
+                Nous mettons à votre disposition une plateforme moderne et sécurisée, adaptée aux besoins de chaque utilisateur.
+            </p>
+        </div>
+
+        <!-- Section 2: Qui sommes-nous -->
+        <div class="space-y-6 fade-in">
+            <h2 class="text-3xl font-bold text-gray-800">Qui sommes-nous ?</h2>
+            <p class="text-lg text-gray-600">
+                Nous sommes une équipe passionnée d'experts immobiliers, développeurs et designers, unis par un objectif commun : rendre l'immobilier
+                accessible, transparent et simple à naviguer. Nous croyons en l'innovation et la simplicité pour améliorer l'expérience des utilisateurs.
+            </p>
+        </div>
+    </div>
+
+    <!-- Section 3: Notre équipe -->
+    <div class="text-center mt-12 fade-in">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Notre équipe</h2>
+        <div class="flex justify-center space-x-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-40">
+                <img class="w-full h-40 object-cover rounded-full mx-auto mb-4" src="/home/digifemmes-22lab043/Téléchargements/2Wf1oV4b.jpeg" alt="Membre de l'équipe">
+                <h3 class="text-xl font-semibold text-gray-800">Soubou grace</h3>
+                <p class="text-gray-600">Directeur Général</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg w-40">
+                <img class="w-full h-40 object-cover rounded-full mx-auto mb-4" src="/home/digifemmes-22lab043/Téléchargements/🍨💫.jpeg" alt="Membre de l'équipe">
+                <h3 class="text-xl font-semibold text-gray-800">ousmane fadima</h3>
+                <p class="text-gray-600">Chef de Projet</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg w-40">
+                <img class="w-full h-40 object-cover rounded-full mx-auto mb-4" src="/home/digifemmes-22lab043/Téléchargements/Avocado Toast.jpeg" alt="Membre de l'équipe">
+                <h3 class="text-xl font-semibold text-gray-800">Ouattara alima halia</h3>
+                <p class="text-gray-600">Chef de Projet</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg w-40">
+                <img class="w-full h-40 object-cover rounded-full mx-auto mb-4" src="/home/digifemmes-22lab043/Téléchargements/foutou sauce graine.jpeg" alt="Membre de l'équipe">
+                <h3 class="text-xl font-semibold text-gray-800">stephanie dago</h3>
+                <p class="text-gray-600">Chef de Projet</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg w-40">
+                <img class="w-full h-40 object-cover rounded-full mx-auto mb-4" src="https://randomuser.me/api/portraits/women/1.jpg" alt="Membre de l'équipe">
+                <h3 class="text-xl font-semibold text-gray-800">Yabre lehanatou</h3>
+                <p class="text-gray-600">Chef de Projet</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Section 4: Suivez-nous -->
+    <div class="text-center mt-12 fade-in">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Suivez-nous</h2>
+        <div class="social-icons flex justify-center space-x-6 text-3xl">
+            <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-yellow-500"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-yellow-500"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-10 mt-12">
+    <div class="container mx-auto px-6">
+        <div class="text-center">
+            <p>&copy; 2025 Easy Immobilier. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Apply fade-in animation on load
+    document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll('.fade-in');
+        elements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.3}s`;
+        });
+    });
+</script>
+
+</body>
+</html>

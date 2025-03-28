@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <title>Easy Immobilier – "Vendez, trouvez, achetez,  un bien… plus malin"</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fadeIn {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="relative h-screen bg-cover bg-center" style="background-image: url('https://i.pinimg.com/736x/54/0f/0f/540f0fa25fd95323d77d614be356f130.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full">
+            <div class="container mx-auto flex justify-between items-center mb-10 absolute top-0 left-0 right-0 p-4 animate-fadeInDown">
+                <div class="flex items-center space-x-4">
+                    <span class="text-3xl font-bold text-white padding-left-0">Easy Immobilier</span>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6 text-white">
+                        <li><a href="index.html" class="hover:text-yellow-400">Accueil</a></li>
+                        <li><a href="verifica.html" class="hover:text-yellow-400">Vérification</a></li>
+                        <li><a href="suivi.html" class="hover:text-yellow-400">Suivi</a></li>
+                        <li><a href="#enregistrement" class="hover:text-yellow-400">Enregistrement</a></li>
+                        <li><a href="#propos" class="hover:text-yellow-400">signature_electronique</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="text-center mt-8 animate-fadeInUp">
+                <h1 class="text-5xl font-bold text-white mb-4">Simplifions l'immobilier à Abidjan</h1>
+                <p class="text-xl text-gray-300 mb-6">Trouvez, achetez et des biens immobiliers en toute simplicité.</p>
+                <a href="#bien" class="bg-yellow-500 text-white py-2 px-6 rounded-full hover:bg-yellow-600 transition">Commencez votre recherche</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-gradient-to-r from-black to-white min-h-screen flex items-center justify-center">
+        <div class="max-w-5xl w-full p-8 bg-white rounded-2xl shadow-2xl space-y-8 fadeIn">
+            <h1 class="text-4xl font-extrabold text-center text-gray-800">Recrutement des Démarcheurs</h1>
+
+            <!-- Message de confirmation -->
+            <div id="successMessage" class="hidden p-4 bg-green-500 text-white text-center rounded-lg shadow-md fadeIn">
+                ✅ Votre inscription a été enregistrée avec succès !
+            </div>
+
+            <!-- Formulaire d'inscription -->
+            <div class="bg-gray-200 p-6 rounded-xl shadow-md">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Devenez Démarcheur Officiel</h2>
+                <input type="text" id="demarcheurName" placeholder="Nom & Prénom" class="w-full p-3 border border-gray-300 rounded-md mb-2">
+                <input type="email" id="demarcheurEmail" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md mb-2">
+                <input type="tel" id="demarcheurPhone" placeholder="Téléphone" class="w-full p-3 border border-gray-300 rounded-md mb-2">
+                <textarea id="demarcheurMotivation" placeholder="Pourquoi voulez-vous devenir démarcheur ?" class="w-full p-3 border border-gray-300 rounded-md mb-4"></textarea>
+                <button id="submitBtn" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">
+                    Soumettre la Candidature ✅
+                </button>
+            </div>
+
+            <!-- Liste des démarcheurs recrutés -->
+            <div class="bg-gray-100 p-6 rounded-xl shadow-md">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Démarcheurs Recrutés</h2>
+                <ul id="recrutedList" class="space-y-3">
+                    <li class="p-4 bg-white rounded-lg shadow-md flex justify-between items-center">
+                        <span class="font-semibold text-gray-700">John Doe - john@example.com</span>
+                        <span class="text-green-600 font-bold">✅ Approuvé</span>
+                    </li>
+                </ul>
+            </div>
+            <a href="index.html">
+                <button class="mt-6 py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition" onclick="window.location.href='accueil1.html'">
+                    Retourner à l'accueil
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Contactez-Nous</h3>
+                    <p class="mb-4">Riviera 2</p>
+                    <p class="mb-4">Email: easy@immobilier.fr</p>
+                    <p>+255 0769565158</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Liens Utiles</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-yellow-600 transition duration-300">Acheter</a></li>
+                        <li><a href="#" class="hover:text-yellow-600 transition duration-300">Vendre</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Suivez-Nous</h3>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-3xl hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-3xl hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-3xl hover:text-orange-500 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-3xl hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p class="text-sm">&copy; 2025 Easy Immobilier. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        const recrutedList = document.getElementById('recrutedList');
+
+        submitBtn.addEventListener('click', () => {
+            const name = document.getElementById('demarcheurName').value.trim();
+            const email = document.getElementById('demarcheurEmail').value.trim();
+            const phone = document.getElementById('demarcheurPhone').value.trim();
+            const motivation = document.getElementById('demarcheurMotivation').value.trim();
+
+            if (name && email && phone && motivation) {
+                const newDmarcheur = document.createElement('li');
+                newDmarcheur.className = "p-4 bg-white rounded-lg shadow-md flex justify-between items-center fadeIn";
+
+                newDmarcheur.innerHTML = `
+                    <span class="font-semibold text-gray-700">${name} - ${email}</span>
+                    <span class="text-green-600 font-bold">✅ En cours de validation</span>
+                `;
+
+                recrutedList.appendChild(newDmarcheur);
+
+                // Afficher le message de confirmation
+                successMessage.classList.remove('hidden');
+
+                // Réinitialiser le formulaire
+                document.getElementById('demarcheurName').value = '';
+                document.getElementById('demarcheurEmail').value = '';
+                document.getElementById('demarcheurPhone').value = '';
+                document.getElementById('demarcheurMotivation').value = '';
+
+                // Disparition du message après 3 secondes
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 3000);
+            } else {
+                alert("Veuillez remplir tous les champs !");
+            }
+        });
+    </script>
+</body>
+</html>
+<!--terminer--> 

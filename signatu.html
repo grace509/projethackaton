@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <title>Easy Immobilier – "Vendez, trouvez, achetez,  un bien… plus malin"</title>
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .fadeIn {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Ajout de l'image de fond */
+        body {
+            background-image: url('https://example.com/ton-image-de-fond.jpg'); /* Remplace cette URL par celle de ton image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- En-tête -->
+    <header class="bg-gray-900 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Easy Immobilier</h1>
+            <nav class="space-x-4">
+                <a href="index.html" class="hover:text-yellow-500">Accueil</a>
+                <a href="recudetele.html" class="hover:text-yellow-500">Historique de transaction</a>
+                <a href="conternous.html" class="hover:text-yellow-500">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Formulaire de Signature Électronique -->
+    <div class="max-w-xl w-full p-8 bg-white rounded-2xl shadow-2xl space-y-8 fadeIn mx-auto mt-8">
+        <h1 class="text-4xl font-extrabold text-center text-gray-800">Signature Électronique</h1>
+        <form action="#" method="POST" class="space-y-4">
+            <div>
+                <label for="nom" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                <input type="text" id="nom" name="nom" class="p-2 mt-1 block w-full border border-gray-300 rounded-md" required>
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="p-2 mt-1 block w-full border border-gray-300 rounded-md" required>
+            </div>
+
+            <div>
+                <label for="signature" class="block text-sm font-medium text-gray-700">Signature (Tracez votre signature ci-dessous)</label>
+                <canvas id="signature-canvas" class="border border-gray-300 w-full h-56 mt-2"></canvas>
+            </div>
+
+            <div class="flex justify-center">
+                <button type="submit" class="mt-6 py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                    Soumettre la signature
+                </button>
+            </div>
+        </form>
+    </div>
+
+    
+    <!-- Pied de page -->
+    <footer class="bg-gray-900 text-white p-4 mt-auto">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Easy Immobilier. Tous droits réservés.</p>
+            <p>
+                <a href="#" class="hover:text-yellow-500">Politique de confidentialité</a> | 
+                <a href="#" class="hover:text-yellow-500">Conditions d'utilisation</a>
+            </p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Icônes des réseaux sociaux -->
+                <a href="#" class="text-white hover:text-yellow-500">
+                    <i class="fab fa-facebook-f"></i> <!-- Facebook -->
+                </a>
+                <a href="#" class="text-white hover:text-yellow-500">
+                    <i class="fab fa-twitter"></i> <!-- Twitter -->
+                </a>
+                <a href="#" class="text-white hover:text-yellow-500">
+                    <i class="fab fa-linkedin-in"></i> <!-- LinkedIn -->
+                </a>
+                <a href="#" class="text-white hover:text-yellow-500">
+                    <i class="fab fa-instagram"></i> <!-- Instagram -->
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('signature-canvas');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+
+        canvas.addEventListener('mousedown', () => drawing = true);
+        canvas.addEventListener('mouseup', () => drawing = false);
+        canvas.addEventListener('mousemove', draw);
+
+        function draw(event) {
+            if (!drawing) return;
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = 'black';
+
+            ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        }
+    </script>
+    
+</body>
+</html>
+<!--terminer-->
